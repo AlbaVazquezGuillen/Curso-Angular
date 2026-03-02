@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/02-object-interface'
+import './topics/11-optional-chaining'
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
