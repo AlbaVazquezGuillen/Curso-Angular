@@ -8,6 +8,7 @@ import type { Character } from '../../../interfaces/character.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharacterList {
-  characters = input.required<Character[]>()
+  characters = input.required<Character[]>();
+  listName = input.required<string>();
 
 }
