@@ -1,0 +1,40 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./gifs/pages/dashboard-page/dashboard-page'),
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'trending',
+      },
+      {
+        path: 'trending',
+        loadComponent: () =>
+          import('./gifs/pages/trending-page/trending-page'),
+      },
+      {
+        path: 'search',
+        loadComponent: () =>
+          import('./gifs/pages/search-page/search-page'),
+      },
+      {
+        path: '**',
+        redirectTo: 'trending',
+      },
+    ],
+  },
+  // opcional: redirección global de '' a 'dashboard'
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard',
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
+  },
+];
